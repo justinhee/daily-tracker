@@ -1,0 +1,12 @@
+.calendar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vw;
+    font-family: monospace;
+}
+
+.month {
+    padding: 10px;
+}

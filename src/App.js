@@ -1,8 +1,9 @@
+import Calendar from "./components/calendar/Calendar";
 
 function App() {
   return (
     <div className="App">
-      daily tracker
+      <Calendar></Calendar>
     </div>
   );
 }

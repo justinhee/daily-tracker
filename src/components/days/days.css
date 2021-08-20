@@ -1,0 +1,25 @@
+.days{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.day{
+    margin: 1px;
+    padding: 5px 5px 20px;
+    height: 50px;
+    background-color: lightgray;
+    text-align:left;
+}
+.weekday{
+    margin: 1px;
+    padding: 20px;
+    background-color: lightblue;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
