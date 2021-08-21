@@ -1,12 +1,20 @@
 .calendar{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    margin-top:100px;
     align-items: center;
     height: 90vw;
     font-family: monospace;
 }
 
 .month {
-    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.changeMonthButton{
+    font-family: monospace;
+    margin-bottom: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: white;
 }

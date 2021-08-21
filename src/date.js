@@ -5,7 +5,7 @@ function daysInMonth(month) {
 
 function firstDayOfMonth(month) {
     const year = new Date().getFullYear();
-    return new Date(year, month+1, 1).getDay();
+    return new Date(year, month, 1).getDay();
 }
 
 const months = [

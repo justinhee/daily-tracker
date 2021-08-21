@@ -1,8 +1,8 @@
 import "./days.css"
 import { daysInMonth, firstDayOfMonth, month } from "../../date"
 
-export default function Days() {
-    const month = 0;
+export default function Days(props) {
+    const month = props.month;
     const d = daysInMonth(month);
     const days = Array.from({ length: d }, (_, i) => i + 1);
     const dayToBeginTheMonthFrom = firstDayOfMonth(month);
@@ -17,14 +17,14 @@ export default function Days() {
             })}
             {days.map((day, i) => {
                 return (
-                    <span className="day" 
+                    <div className="day" 
                     key={i} 
                     style={i === 0 ? firstDayStyle : {}}>
-                        {day}
+                        <p>{day}</p>
                         <div className="content">
                             hello
                         </div>
-                    </span>
+                    </div>
                 )
             })}
         </div>
