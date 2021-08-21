@@ -8,13 +8,59 @@
 }
 
 .month {
+    font-size: 30px;
     margin-bottom: 10px;
+}
+
+.monthButtons{
+    display: flex;
+    justify-content: space-around;
+    width: 714px;
 }
 
 .changeMonthButton{
     font-family: monospace;
-    margin-bottom: 20px;
     border: none;
     cursor: pointer;
     background-color: white;
+}
+
+.days{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.day{
+    position: relative;
+    display: flex;
+    margin: 1px;
+    width: 100px;
+    height: 100px;
+    background-color: lightgray;
+    text-align:left;
+    justify-content: center;
+    align-content: center;
+}
+.day:hover{
+    width: 98px;
+    height: 98px;
+    border: solid 1px gray;
+}
+.day > p{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+
+}
+
+.weekday{
+    margin: 1px;
+    padding: 20px;
+    background-color: lightblue;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

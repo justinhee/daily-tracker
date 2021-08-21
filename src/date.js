@@ -23,4 +23,6 @@ const months = [
     'December',
 ];
 
-export { daysInMonth, firstDayOfMonth, months };
+const weekdays = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'];
+
+export { daysInMonth, firstDayOfMonth, months, weekdays };
