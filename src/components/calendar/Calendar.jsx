@@ -11,21 +11,25 @@ export default function Calendar() {
     const [year, setYear] = useState(new Date().getFullYear());
 
     const prevMonth = () => {
-        setMonth(prevMonth => prevMonth - 1);
-        if (month % 12 === 0) {
+        if (month === 0) {
             setYear(prevYear => prevYear - 1);
+            setMonth(11);
+        } else {
+            setMonth(prevMonth => prevMonth - 1);
         }
     }
     const nextMonth = () => {
-        setMonth(prevMonth => prevMonth + 1);
-        if (month % 12 === 0) {
+        if (month === 11) {
             setYear(prevYear => prevYear + 1);
+            setMonth(0);
+        } else {
+            setMonth(prevMonth => prevMonth + 1);
         }
     }
 
-    const d = daysInMonth(month);
+    const d = daysInMonth(month, year);
     const days = Array.from({ length: d }, (_, i) => i + 1);
-    const dayToBeginTheMonthFrom = firstDayOfMonth(month);
+    const dayToBeginTheMonthFrom = firstDayOfMonth(month, year);
     const firstDayStyle = { gridColumnStart: dayToBeginTheMonthFrom + 1 };
 
 
@@ -37,7 +41,7 @@ export default function Calendar() {
             </div>
             
             <span className="month">
-                {months[month % 12]} {year}
+                {months[month]} {year}
             </span>
             <div className="days">
                 {weekdays.map(weekday => {
@@ -47,7 +51,7 @@ export default function Calendar() {
                     return (
                         <button className="day"
                             key={day}
-                            style={day === 0 ? firstDayStyle : {}}
+                            style={day === 1 ? firstDayStyle : {}}
                             onClick={() => {
                                 setSelectedDay(day);
                                 setButtonPopup(true);

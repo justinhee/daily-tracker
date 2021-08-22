@@ -1,10 +1,8 @@
-function daysInMonth(month) {
-    const year = new Date().getFullYear();
+function daysInMonth(month, year) {
     return new Date(year, month+1, 0).getDate();
 }
 
-function firstDayOfMonth(month) {
-    const year = new Date().getFullYear();
+function firstDayOfMonth(month, year) {
     return new Date(year, month, 1).getDay();
 }
 
