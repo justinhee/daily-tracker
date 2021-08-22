@@ -37,20 +37,21 @@
     width: 100px;
     height: 100px;
     background-color: lightgray;
-    text-align:left;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+    border: none;
+    font-family: monospace;
+    cursor: pointer;
 }
 .day:hover{
-    width: 98px;
-    height: 98px;
+    width: 100px;
+    height: 100px;
     border: solid 1px gray;
 }
 .day > p{
     position: absolute;
     top: 5px;
     left: 5px;
-
 }
 
 .weekday{

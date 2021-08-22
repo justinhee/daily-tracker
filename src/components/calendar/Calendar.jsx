@@ -1,8 +1,12 @@
 import "./calendar.css"
 import { daysInMonth, firstDayOfMonth, months, weekdays } from "../../date";
 import { useState } from 'react';
+import EditDay from "../editDay/EditDay";
 
 export default function Calendar() {
+    const [buttonPopup, setButtonPopup] = useState(false);
+    const [selectedDay, setSelectedDay] = useState(0);
+
     const [month, setMonth] = useState(new Date().getMonth());
     const [year, setYear] = useState(new Date().getFullYear());
 
@@ -39,19 +43,24 @@ export default function Calendar() {
                 {weekdays.map(weekday => {
                     return <span key={weekday} className="weekday">{weekday}</span>
                 })}
-                {days.map((day, i) => {
+                {days.map((day) => {
                     return (
-                        <div className="day"
-                            key={i}
-                            style={i === 0 ? firstDayStyle : {}}>
+                        <button className="day"
+                            key={day}
+                            style={day === 0 ? firstDayStyle : {}}
+                            onClick={() => {
+                                setSelectedDay(day);
+                                setButtonPopup(true);
+                            }}>
                             <p>{day}</p>
                             <div className="content">
-                                content
+                                <p>content</p>
                             </div>
-                        </div>
+                        </button>
                     )
                 })}
             </div>
+            <EditDay trigger={buttonPopup} setTrigger={() => setButtonPopup(false)} day={selectedDay} month={month} year={year}/>
         </div>
     )
 }

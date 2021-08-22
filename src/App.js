@@ -1,9 +1,9 @@
-import Calendar from "./components/calendar/Calendar";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <div className="App">
-      <Calendar></Calendar>
+      <Home />
     </div>
   );
 }
