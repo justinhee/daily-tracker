@@ -10,26 +10,58 @@
     align-items: center;
 }
 
-.popup-inner {
+.popup-wrapper{
     position: relative;
+}
+
+
+.popup-inner {
     padding: 32px;
-    width: 50%;
-    height: 70%;
+    width: 50vh;
+    height: 70vh;
     background-color: white;
+    overflow-y: auto;
     
 }
 
-.popup-inner .close-button {
+.popup-inner .quit-button {
     position: absolute;
     top: 16px;
     right: 16px;
     font-family: monospace;
     border: none;
     background-color: white;
-    font-size: 12px;
+    font-size: 16px;
     cursor: pointer;
+    padding:5px;
 }
 
 .popup-inner .date {
-    font-size: 16px;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
+
+.editText {
+    width: 100%;
+    height: 60vh;
+    border: none;
+}
+
+.editText:focus{
+    outline: none;
+}
+
+.editSave {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    font-family: monospace;
+    border: none;
+    background-color: white;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: white;
+    padding:5px;
+    
+}
+
