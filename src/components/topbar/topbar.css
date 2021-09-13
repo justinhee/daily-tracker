@@ -1,0 +1,15 @@
+.top{
+    width: 100%;
+    height: 50px;
+    background-color: red;
+    display: flex;
+    font-family: monospace;
+    align-items: center;
+    justify-content: end;
+}
+
+.logout{
+    background-color: white;
+    padding: 5px;
+    margin-left: 16px;
+}

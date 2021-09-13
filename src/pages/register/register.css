@@ -1,4 +1,4 @@
-.login{
+.register{
     height: 100vh;
     background-color: lightblue;
     display: flex;
@@ -8,28 +8,28 @@
     font-family: monospace;
 }
 
-.loginTitle{
+.registerTitle{
     font-size: 30px;
 }
 
-.loginForm{
+.registerForm{
     margin-top: 20px;
     display: flex;
     flex-direction: column;
 }
 
-.loginForm>label{
+.registerForm>label{
     margin: 10px 0
 }
 
-.loginInput{
+.registerInput{
     padding: 10px;
     background-color:white;
     border: none;
     font-family: monospace;
 }
 
-.loginButton{
+.registerButton{
     padding: 10px;
     margin-top: 20px;
     cursor: pointer;
@@ -38,7 +38,7 @@
     font-family: monospace;
 }
 
-.loginRegisterButton{
+.registerLoginButton{
     position: absolute;
     top: 60px;
     right: 20px;
