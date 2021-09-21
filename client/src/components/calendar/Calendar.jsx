@@ -1,9 +1,21 @@
 import "./calendar.css"
 import { daysInMonth, firstDayOfMonth, months, weekdays } from "../../date";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import EditDay from "../editDay/EditDay";
+import axios from 'axios';
+
 
 export default function Calendar() {
+    const [entries, setEntries] = useState([]);
+    useEffect(() => {
+        const fetchEntries = async () => {
+            const res = await axios.get("/entries");
+            console.log(res.data)
+            setEntries(res.data);
+        }
+        fetchEntries();
+    }, [])
+
     const [buttonPopup, setButtonPopup] = useState(false);
     const [selectedDay, setSelectedDay] = useState(0);
 
@@ -48,6 +60,9 @@ export default function Calendar() {
                     return <span key={weekday} className="weekday">{weekday}</span>
                 })}
                 {days.map((day) => {
+                    const datestring = `${year}-${month+1}-${day}`;
+                    const entry = entries.find(entry => entry.date === datestring);
+                    const content = entry ? entry.entry : '';
                     return (
                         <button className="day"
                             key={day}
@@ -58,13 +73,13 @@ export default function Calendar() {
                             }}>
                             <p>{day}</p>
                             <div className="content">
-                                <p>content</p>
+                                <p>{content}</p>
                             </div>
                         </button>
                     )
                 })}
             </div>
-            <EditDay trigger={buttonPopup} setTrigger={() => setButtonPopup(false)} day={selectedDay} month={month} year={year}/>
+            <EditDay trigger={buttonPopup} setTrigger={() => setButtonPopup(false)} entries={entries} day={selectedDay} month={month} year={year}/>
         </div>
     )
 }
