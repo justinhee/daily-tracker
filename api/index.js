@@ -11,7 +11,10 @@ import entryRoute from './routes/entries.js';
 
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URI).then(console.log("Connected to MongoDB")).catch((err)=>console.log(err));
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+}).then(console.log("Connected to MongoDB")).catch((err)=>console.log(err));
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
@@ -22,5 +25,5 @@ app.use("/", (req, res)=> {
 })
 
 app.listen(port, () => {
-    console.log(`Backend is running at https://localhost:${port}`)
+    console.log(`Backend is running at http://localhost:${port}`)
 })

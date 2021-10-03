@@ -22,6 +22,9 @@ export default function Calendar() {
     const [month, setMonth] = useState(new Date().getMonth());
     const [year, setYear] = useState(new Date().getFullYear());
 
+    const [selectedEntry, setSelectedEntry] = useState([]);
+
+
     const prevMonth = () => {
         if (month === 0) {
             setYear(prevYear => prevYear - 1);
@@ -60,8 +63,8 @@ export default function Calendar() {
                     return <span key={weekday} className="weekday">{weekday}</span>
                 })}
                 {days.map((day) => {
-                    const datestring = `${year}-${month+1}-${day}`;
-                    const entry = entries.find(entry => entry.date === datestring);
+                    const dateString = `${year}-${month+1}-${day}`;
+                    const entry = entries.find(entry => entry.date === dateString);
                     const content = entry ? entry.entry : '';
                     return (
                         <button className="day"

@@ -48,3 +48,8 @@
     padding: 10px;
     font-family: monospace;
 }
+
+.error{
+    color: red;
+    margin-top: 10px;
+}

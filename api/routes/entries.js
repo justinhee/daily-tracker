@@ -66,9 +66,9 @@ router.get("/:id", async (req, res) => {
 
 //GET ALL ENTRIES
 router.get("/", async (req, res) => {
+    const username = req.body.username;
     try{
         let entries;
-        const username = req.body.username;
         if(username) {
             entries = await Entry.find({
                 username,
